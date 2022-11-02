@@ -8,6 +8,7 @@ import { db } from '../firebase'
 const Todo = () => {
   const [todo, setTodo] = useState('')
   const [todos, setTodos] = useState([])
+  // const [add, newAdd] = useState(null)
 
   const addTodo = async (e) => {
     e.preventDefault()
@@ -60,7 +61,11 @@ const Todo = () => {
 
         <div className="todo-content">
           {todos?.map((todo, i) => (
-            <p key={i}>{todo.todo}</p>
+            <ul>
+              <li>
+                <p key={i}>{todo.todo}</p>
+              </li>
+            </ul>
           ))}
         </div>
       </div>
